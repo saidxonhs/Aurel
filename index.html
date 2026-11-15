@@ -1,0 +1,180 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<meta name="theme-color" content="#090b0d">
+<meta name="description" content="AUREL — an immersive luxury hotel experience. Discover extraordinary stays, dining and wellness.">
+<title>AUREL — Beyond the Ordinary</title>
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=DM+Sans:wght@400;500;600;700&family=Manrope:wght@300;400;500;600;700;800&display=swap" rel="stylesheet">
+<style>
+:root{--bg:#090b0d;--panel:#111518;--cream:#f2eee5;--muted:#a8a69f;--gold:#c5a46d;--line:rgba(242,238,229,.14);--serif:Georgia,"Times New Roman",serif}
+*{box-sizing:border-box}html{scroll-behavior:auto}body{margin:0;background:var(--bg);color:var(--cream);font-family:"DM Sans",sans-serif;overflow-x:hidden}body.loading{overflow:hidden}a{color:inherit;text-decoration:none}button,input,select{font:inherit}button{cursor:pointer}.noise{position:fixed;inset:0;pointer-events:none;z-index:20;opacity:.045;background-image:url("data:image/svg+xml,%3Csvg viewBox='0 0 180 180' xmlns='http://www.w3.org/2000/svg'%3E%3Cfilter id='n'%3E%3CfeTurbulence type='fractalNoise' baseFrequency='.9' numOctaves='3' stitchTiles='stitch'/%3E%3C/filter%3E%3Crect width='100%25' height='100%25' filter='url(%23n)' opacity='.45'/%3E%3C/svg%3E")}.loader{position:fixed;inset:0;background:#090b0d;z-index:100;display:grid;place-items:center;transition:opacity .8s,visibility .8s}.loader.hide{opacity:0;visibility:hidden}.loader-inner{text-align:center}.loader-mark{font:italic 46px var(--serif);letter-spacing:.16em;color:var(--gold)}.loader-line{width:180px;height:1px;background:#333;margin:22px auto;overflow:hidden}.loader-line:after{content:"";display:block;height:100%;width:45%;background:var(--gold);animation:load 1.2s ease-in-out infinite}@keyframes load{from{transform:translateX(-110%)}to{transform:translateX(340%)}}.loader small{letter-spacing:.28em;color:#8e8a80;font-size:9px}
+header{position:fixed;top:0;left:0;width:100%;z-index:30;padding:25px 5.5%;display:flex;align-items:center;justify-content:space-between;transition:background .4s,padding .4s,border .4s;border-bottom:1px solid transparent}header.scrolled{padding:16px 5.5%;background:rgba(8,10,12,.82);backdrop-filter:blur(18px);border-color:var(--line)}.brand{font:italic 28px var(--serif);letter-spacing:.19em;color:var(--cream)}.brand span{color:var(--gold)}nav{display:flex;gap:30px;align-items:center}nav a,.nav-book{font-size:10px;letter-spacing:.17em;text-transform:uppercase;color:#d5d1c8;transition:color .25s}nav a:hover{color:var(--gold)}.nav-book{border:1px solid rgba(197,164,109,.65);padding:13px 19px;color:var(--gold)}.menu-toggle{display:none;background:none;border:0;color:var(--cream);font-size:22px}
+.hero{height:100svh;min-height:720px;position:relative;display:flex;align-items:center;overflow:hidden;background:#151a1d}.hero-bg{position:absolute;inset:0;background:linear-gradient(90deg,rgba(5,8,10,.82) 0%,rgba(5,8,10,.25) 58%,rgba(5,8,10,.1)),linear-gradient(0deg,#090b0d 0%,transparent 28%),url('https://images.unsplash.com/photo-1511818966892-d7d671e672a2?auto=format&fit=crop&w=2400&q=90') center/cover;transform:scale(1.08);animation:heroZoom 14s ease-out forwards}@keyframes heroZoom{to{transform:scale(1)}}#hero3d{position:absolute;inset:0;width:100%;height:100%;pointer-events:none;opacity:.72}.hero-content{position:relative;z-index:2;padding:100px 10% 30px;max-width:1000px}.eyebrow{font-size:10px;letter-spacing:.32em;text-transform:uppercase;color:var(--gold);display:flex;align-items:center;gap:14px}.eyebrow:before{content:"";width:38px;height:1px;background:var(--gold)}h1,h2,h3,p{margin-top:0}h1{font:300 clamp(64px,10vw,150px)/.88 Manrope,sans-serif;letter-spacing:-.075em;margin:30px 0 28px;max-width:900px}h1 em{font:italic  .92em var(--serif);font-weight:400;color:var(--gold);letter-spacing:-.06em}.hero-copy{font-size:14px;line-height:1.8;color:#d0cec8;max-width:390px;margin-bottom:36px}.actions{display:flex;gap:14px;align-items:center;flex-wrap:wrap}.btn{display:inline-flex;align-items:center;justify-content:center;gap:22px;padding:17px 23px;font-size:10px;letter-spacing:.18em;text-transform:uppercase;border:1px solid var(--gold);background:var(--gold);color:#111;transition:transform .3s,background .3s,color .3s}.btn:hover{transform:translateY(-4px);background:transparent;color:var(--gold)}.btn.secondary{background:transparent;color:var(--cream);border-color:rgba(255,255,255,.35)}.btn.secondary:hover{border-color:var(--gold);color:var(--gold)}.hero-bottom{position:absolute;z-index:3;bottom:38px;left:5.5%;right:5.5%;display:flex;justify-content:space-between;align-items:end}.scroll-cue{font-size:9px;letter-spacing:.24em;color:#aaa;text-transform:uppercase;display:flex;align-items:center;gap:14px}.scroll-cue i{display:block;width:1px;height:48px;background:linear-gradient(var(--gold),transparent);animation:pulse 1.8s infinite}@keyframes pulse{50%{transform:scaleY(.55);transform-origin:top}}.hero-index{font:italic 16px var(--serif);color:var(--gold)}
+.booking-wrap{position:relative;z-index:5;margin:-1px auto 0;background:#111518;padding:0 5.5%}.booking{max-width:1250px;margin:auto;display:grid;grid-template-columns:1.2fr 1.2fr 1fr 1fr auto;align-items:center;border:1px solid var(--line);background:rgba(20,24,26,.94);transform:translateY(-1px)}.booking-field{padding:22px 25px;border-right:1px solid var(--line)}.booking-field label{display:block;color:var(--gold);font-size:9px;letter-spacing:.2em;text-transform:uppercase;margin-bottom:10px}.booking-field input,.booking-field select{width:100%;background:none;border:0;outline:0;color:var(--cream);font-size:13px}.booking-field input::-webkit-calendar-picker-indicator{filter:invert(1)}.booking-field select option{background:#111;color:white}.booking .btn{height:100%;border:0;padding:20px 28px;white-space:nowrap}
+.section{padding:145px 8%;position:relative}.section-kicker{color:var(--gold);font-size:10px;letter-spacing:.27em;text-transform:uppercase;margin-bottom:25px}.section-title{font:300 clamp(42px,6.2vw,88px)/1.03 Manrope,sans-serif;letter-spacing:-.065em;max-width:850px;margin-bottom:28px}.section-title em{font-family:var(--serif);font-weight:400;color:var(--gold)}.intro-grid{display:grid;grid-template-columns:1.1fr .9fr;gap:9%;align-items:end}.intro-text{max-width:440px;color:var(--muted);font-size:14px;line-height:1.9}.intro-visual{height:570px;position:relative;margin-top:75px;overflow:hidden}.intro-visual img{width:100%;height:100%;object-fit:cover;transform:scale(1.08);transition:transform 1.4s}.intro-visual:hover img{transform:scale(1)}.visual-caption{position:absolute;bottom:24px;left:25px;font-size:9px;letter-spacing:.22em;text-transform:uppercase}
+.rooms{background:#101416;padding-top:140px;padding-bottom:160px}.rooms-head{display:flex;justify-content:space-between;align-items:end;margin-bottom:55px}.rooms-head .section-title{margin-bottom:0}.rooms-note{max-width:240px;color:var(--muted);font-size:12px;line-height:1.8}.room-feature{display:grid;grid-template-columns:1.2fr .8fr;min-height:600px;border-top:1px solid var(--line);border-bottom:1px solid var(--line)}.room-image{position:relative;overflow:hidden;min-height:500px}.room-image img{position:absolute;width:100%;height:100%;object-fit:cover;transition:transform 1.2s}.room-feature:hover .room-image img{transform:scale(1.045)}.room-info{padding:8% 10%;display:flex;flex-direction:column;justify-content:center}.room-number{font:italic 14px var(--serif);color:var(--gold);margin-bottom:45px}.room-info h3{font:300 clamp(35px,4vw,58px)/1.05 Manrope;letter-spacing:-.06em;margin-bottom:20px}.room-info p{font-size:13px;color:var(--muted);line-height:1.9;max-width:350px}.room-meta{display:flex;gap:22px;color:#c4c0b7;font-size:10px;letter-spacing:.1em;text-transform:uppercase;margin:22px 0 34px}.text-link{display:inline-flex;align-items:center;gap:25px;color:var(--gold);font-size:10px;letter-spacing:.2em;text-transform:uppercase;width:max-content;border-bottom:1px solid rgba(197,164,109,.5);padding-bottom:12px}.room-strip{display:grid;grid-template-columns:repeat(3,1fr);gap:18px;margin-top:24px}.room-card{position:relative;height:270px;overflow:hidden}.room-card img{width:100%;height:100%;object-fit:cover;transition:transform .9s,opacity .5s;opacity:.72}.room-card:hover img{transform:scale(1.07);opacity:1}.room-card span{position:absolute;bottom:18px;left:20px;font:italic 23px var(--serif)}
+.experience{padding-top:150px;padding-bottom:150px}.experience-grid{display:grid;grid-template-columns:.85fr 1.15fr;gap:10%;align-items:center}.experience-image{height:680px;position:relative;overflow:hidden}.experience-image img{width:100%;height:100%;object-fit:cover}.experience-copy p{color:var(--muted);font-size:14px;line-height:1.9;max-width:400px;margin:30px 0}.experience-list{border-top:1px solid var(--line);margin-top:40px}.experience-list div{padding:19px 0;border-bottom:1px solid var(--line);display:flex;justify-content:space-between;color:#ddd;font-size:12px;letter-spacing:.08em}.experience-list b{font:italic 16px var(--serif);color:var(--gold);font-weight:400}
+.marquee{overflow:hidden;background:var(--gold);color:#111;padding:24px 0;white-space:nowrap}.marquee-track{display:inline-block;animation:marquee 28s linear infinite;font:italic 36px var(--serif);letter-spacing:.04em}.marquee-track span{padding:0 35px}@keyframes marquee{to{transform:translateX(-50%)}}
+.dining{padding:150px 8%;background:#eae5da;color:#161819}.dining .section-kicker{color:#927344}.dining .section-title em{color:#927344}.dining-grid{display:grid;grid-template-columns:1fr 1fr;gap:7%;align-items:center;margin-top:60px}.dining-image{height:570px;overflow:hidden}.dining-image img{width:100%;height:100%;object-fit:cover;transition:transform 1.2s}.dining-image:hover img{transform:scale(1.05)}.dining-copy p{font-size:14px;line-height:1.9;color:#64635d;max-width:410px;margin:25px 0 35px}.dining .text-link{color:#927344;border-color:#b7a17d}
+.gallery{padding:145px 5.5%}.gallery-head{display:flex;justify-content:space-between;align-items:end;padding:0 2.5%;margin-bottom:50px}.gallery-grid{display:grid;grid-template-columns:1.1fr .75fr 1.15fr;grid-template-rows:260px 260px;gap:15px}.gallery-grid figure{margin:0;overflow:hidden;position:relative}.gallery-grid figure:first-child{grid-row:span 2}.gallery-grid figure:nth-child(4){grid-column:2/4}.gallery-grid img{width:100%;height:100%;object-fit:cover;transition:transform 1s}.gallery-grid figure:hover img{transform:scale(1.07)}.gallery-grid figcaption{position:absolute;bottom:16px;left:18px;font-size:9px;letter-spacing:.2em;text-transform:uppercase;text-shadow:0 2px 12px #000}
+.quote{padding:150px 10%;text-align:center;background:linear-gradient(rgba(7,10,11,.72),rgba(7,10,11,.82)),url('https://images.unsplash.com/photo-1518837695005-2083093ee35b?auto=format&fit=crop&w=2000&q=85') center/cover fixed}.quote blockquote{font:italic clamp(32px,5vw,66px)/1.2 var(--serif);max-width:950px;margin:25px auto 35px}.quote small{color:var(--gold);font-size:9px;letter-spacing:.25em;text-transform:uppercase}
+footer{padding:90px 8% 30px;background:#07090a}.footer-top{display:flex;justify-content:space-between;gap:40px;padding-bottom:70px;border-bottom:1px solid var(--line)}.footer-brand{font:italic 48px var(--serif);letter-spacing:.18em}.footer-brand span{color:var(--gold)}.footer-top p{font-size:12px;line-height:1.8;color:var(--muted);max-width:270px;margin-top:20px}.footer-links{display:flex;gap:70px}.footer-links div{display:flex;flex-direction:column;gap:15px}.footer-links b{font-size:9px;color:var(--gold);letter-spacing:.2em;text-transform:uppercase;margin-bottom:8px}.footer-links a{font-size:11px;color:#c5c2ba}.footer-bottom{display:flex;justify-content:space-between;padding-top:25px;color:#777;font-size:9px;letter-spacing:.12em;text-transform:uppercase}
+.reveal{opacity:0;transform:translateY(45px);transition:opacity .9s ease,transform .9s cubic-bezier(.2,.7,.2,1)}.reveal.visible{opacity:1;transform:translateY(0)}.image-reveal{clip-path:inset(12% 8% 12% 8%);transition:clip-path 1.2s cubic-bezier(.2,.7,.2,1)}.image-reveal.visible{clip-path:inset(0)}
+.modal{position:fixed;inset:0;background:rgba(0,0,0,.78);backdrop-filter:blur(12px);z-index:80;display:none;place-items:center;padding:20px}.modal.open{display:grid}.modal-box{width:min(520px,100%);background:#14191b;border:1px solid var(--line);padding:38px;position:relative}.modal-box h3{font:300 38px Manrope;letter-spacing:-.05em;margin-bottom:10px}.modal-box p{color:var(--muted);font-size:12px;line-height:1.7}.modal-close{position:absolute;right:18px;top:14px;background:none;border:0;color:#fff;font-size:25px}.modal-box label{display:block;font-size:9px;letter-spacing:.16em;color:var(--gold);text-transform:uppercase;margin:18px 0 8px}.modal-box input,.modal-box select{width:100%;padding:13px;background:#0b0e10;color:#fff;border:1px solid var(--line);outline:0}.modal-box .btn{width:100%;margin-top:24px}.notice{font-size:10px!important;color:#d2b987!important;margin-top:14px}
+@media(max-width:900px){nav{gap:15px}nav a{font-size:8px}.booking{grid-template-columns:repeat(2,1fr)}.booking .btn{grid-column:span 2;padding:17px}.booking-field:nth-child(2){border-right:0}.intro-grid,.experience-grid,.dining-grid{grid-template-columns:1fr;gap:40px}.intro-visual{margin-top:20px;height:480px}.experience-image{height:500px;order:2}.room-feature{grid-template-columns:1fr}.room-image{min-height:450px}.room-info{padding:55px 8%}.gallery-grid{grid-template-rows:220px 220px}.footer-top{flex-direction:column}.footer-links{gap:45px}}
+@media(max-width:650px){header{padding:20px 6%}.brand{font-size:24px}nav{display:none;position:absolute;top:70px;left:0;width:100%;padding:30px 7%;background:rgba(8,10,12,.97);flex-direction:column;align-items:flex-start;gap:24px}nav.open{display:flex}nav a{font-size:11px}.nav-book{display:none}.menu-toggle{display:block}.hero{min-height:690px}.hero-content{padding:110px 7% 20px}h1{font-size:clamp(60px,17vw,100px)}.hero-bottom{left:7%;right:7%;bottom:25px}.hero-index{display:none}.booking-wrap{padding:0 5%}.booking{grid-template-columns:1fr 1fr}.booking-field{padding:17px 14px}.booking-field label{font-size:8px}.booking-field input,.booking-field select{font-size:11px}.section{padding:95px 7%}.intro-grid{gap:15px}.intro-visual{height:390px}.rooms-head,.gallery-head{display:block}.rooms-note{margin-top:25px}.room-image{min-height:330px}.room-strip{grid-template-columns:1fr}.room-card{height:240px}.experience-image{height:390px}.dining{padding:95px 7%}.dining-grid{margin-top:35px}.dining-image{height:370px}.gallery{padding:95px 5%}.gallery-grid{grid-template-columns:1fr 1fr;grid-template-rows:220px 180px 180px}.gallery-grid figure:first-child{grid-row:span 2}.gallery-grid figure:nth-child(4){grid-column:1/3}.quote{padding:100px 8%;background-attachment:scroll}.footer-links{gap:25px;flex-wrap:wrap}.footer-brand{font-size:38px}.footer-bottom{gap:15px;flex-direction:column}.modal-box{padding:28px 22px}}
+@media(prefers-reduced-motion:reduce){*,*:before,*:after{animation-duration:.01ms!important;animation-iteration-count:1!important;scroll-behavior:auto!important;transition-duration:.01ms!important}}
+</style>
+</head>
+<body class="loading">
+<div class="loader" id="loader"><div class="loader-inner"><div class="loader-mark">AUREL</div><div class="loader-line"></div><small>AN EXTRAORDINARY PLACE</small></div></div>
+<div class="noise"></div>
+<header id="header">
+  <a class="brand" href="#home">AUREL<span>.</span></a>
+  <nav id="nav">
+    <a href="#home">Home</a><a href="#hotel">The Hotel</a><a href="#rooms">Suites</a><a href="#experiences">Experiences</a><a href="#dining">Dining</a><a href="#gallery">Gallery</a>
+  </nav>
+  <a class="nav-book" href="#booking">Reserve a stay&nbsp; ↗</a>
+  <button class="menu-toggle" id="menuToggle" aria-label="Toggle menu">☰</button>
+</header>
+<main>
+<section class="hero" id="home">
+  <div class="hero-bg"></div><canvas id="hero3d"></canvas>
+  <div class="hero-content">
+    <div class="eyebrow reveal">A new perspective on luxury</div>
+    <h1 class="reveal">BEYOND<br><em>the ordinary.</em></h1>
+    <p class="hero-copy reveal">A considered world of quiet grandeur, extraordinary architecture and moments that stay with you long after you leave.</p>
+    <div class="actions reveal"><a class="btn" href="#hotel">Explore the hotel <span>↗</span></a><a class="btn secondary" href="#booking">Reserve your stay <span>＋</span></a></div>
+  </div>
+  <div class="hero-bottom"><div class="scroll-cue"><i></i> Scroll to discover</div><div class="hero-index">01 — 07</div></div>
+</section>
+<section class="booking-wrap" id="booking">
+  <form class="booking" id="bookingForm">
+    <div class="booking-field"><label for="checkin">Check in</label><input id="checkin" type="date" required></div>
+    <div class="booking-field"><label for="checkout">Check out</label><input id="checkout" type="date" required></div>
+    <div class="booking-field"><label for="guests">Guests</label><select id="guests"><option>2 Guests</option><option>1 Guest</option><option>3 Guests</option><option>4 Guests</option><option>5+ Guests</option></select></div>
+    <div class="booking-field"><label for="roomtype">Stay</label><select id="roomtype"><option>Any suite</option><option>Deluxe Room</option><option>Premium Suite</option><option>Presidential Suite</option><option>Private Villa</option></select></div>
+    <button class="btn" type="submit">Check availability&nbsp; ↗</button>
+  </form>
+</section>
+<section class="section" id="hotel">
+  <div class="intro-grid">
+    <div><div class="section-kicker reveal">01 / The art of staying</div><h2 class="section-title reveal">A place to<br> <em>feel elsewhere.</em></h2></div>
+    <p class="intro-text reveal">Set apart from the expected, AUREL is an invitation to slow down and experience the exceptional. Thoughtful design, intuitive hospitality and a deep connection to place come together in a world made for discovery.</p>
+  </div>
+  <div class="intro-visual image-reveal"><img loading="lazy" src="https://images.unsplash.com/photo-1600607687939-ce8a6c25118c?auto=format&fit=crop&w=2000&q=85" alt="Contemporary luxury architecture"><div class="visual-caption">Architecture in harmony with nature</div></div>
+</section>
+<section class="rooms" id="rooms">
+  <div class="rooms-head"><div><div class="section-kicker reveal">02 / Private worlds</div><h2 class="section-title reveal">Stay in <em>your element.</em></h2></div><p class="rooms-note reveal">Spaces shaped by light, texture and a sense of effortless calm. Find the setting that feels like yours.</p></div>
+  <div class="room-feature">
+    <div class="room-image image-reveal"><img loading="lazy" src="https://images.unsplash.com/photo-1611892440504-42a792e24d32?auto=format&fit=crop&w=1800&q=85" alt="Luxury hotel suite"></div>
+    <div class="room-info"><div class="room-number reveal">SUITE 001 / SIGNATURE COLLECTION</div><h3 class="reveal">The Signature<br>Suite</h3><p class="reveal">A serene sanctuary with generous proportions, tactile materials and uninterrupted views. Every detail has been considered; nothing is ordinary.</p><div class="room-meta reveal"><span>72 m²</span><span>2 Guests</span><span>King Bed</span></div><a href="#booking" class="text-link reveal">Discover the suite <span>↗</span></a></div>
+  </div>
+  <div class="room-strip">
+    <div class="room-card reveal"><img loading="lazy" src="https://images.unsplash.com/photo-1590490360182-c33d57733427?auto=format&fit=crop&w=900&q=85" alt="Deluxe room"><span>Deluxe Room</span></div>
+    <div class="room-card reveal"><img loading="lazy" src="https://images.unsplash.com/photo-1616486338812-3dadae4b4ace?auto=format&fit=crop&w=900&q=85" alt="Premium suite"><span>Premium Suite</span></div>
+    <div class="room-card reveal"><img loading="lazy" src="https://images.unsplash.com/photo-1600607687920-4e2a09cf159d?auto=format&fit=crop&w=900&q=85" alt="Private villa"><span>Private Villa</span></div>
+  </div>
+</section>
+<section class="section experience" id="experiences">
+  <div class="experience-grid">
+    <div class="experience-image image-reveal"><img loading="lazy" src="https://images.unsplash.com/photo-1576013551627-0cc20b96c2a7?auto=format&fit=crop&w=1300&q=85" alt="Infinity pool at a luxury resort"></div>
+    <div class="experience-copy"><div class="section-kicker reveal">03 / Beyond the room</div><h2 class="section-title reveal">Moments that<br><em>move you.</em></h2><p class="reveal">From restorative rituals to evenings that unfold beautifully, discover experiences designed to bring you closer to what matters.</p><div class="experience-list reveal"><div><span>Infinity Pool & Cabanas</span><b>01</b></div><div><span>Holistic Spa & Wellness</span><b>02</b></div><div><span>Rooftop Lounge</span><b>03</b></div><div><span>Personal Concierge</span><b>04</b></div><div><span>Private Celebrations</span><b>05</b></div></div></div>
+  </div>
+</section>
+<div class="marquee"><div class="marquee-track"><span>THE ART OF ESCAPE</span> ✳ <span>TIME WELL SPENT</span> ✳ <span>THE ART OF ESCAPE</span> ✳ <span>TIME WELL SPENT</span> ✳ <span>THE ART OF ESCAPE</span> ✳ <span>TIME WELL SPENT</span> ✳ </div></div>
+<section class="dining" id="dining">
+  <div class="section-kicker reveal">04 / A taste of somewhere</div><h2 class="section-title reveal">Gather around<br><em>the extraordinary.</em></h2>
+  <div class="dining-grid"><div class="dining-image image-reveal"><img loading="lazy" src="https://images.unsplash.com/photo-1414235077428-338989a2e8c0?auto=format&fit=crop&w=1400&q=85" alt="Fine dining restaurant"></div><div class="dining-copy"><div class="section-kicker reveal">The AUREL table</div><h3 class="section-title reveal" style="font-size:clamp(35px,4vw,58px)">A celebration<br>of <em>every sense.</em></h3><p class="reveal">Seasonal ingredients, thoughtful craft and a welcoming sense of occasion. Discover a dining experience that is as memorable as the setting itself.</p><a href="#contact" class="text-link reveal">Discover dining <span>↗</span></a></div></div>
+</section>
+<section class="gallery" id="gallery">
+  <div class="gallery-head"><div><div class="section-kicker reveal">05 / A visual story</div><h2 class="section-title reveal">A world worth <em>seeing.</em></h2></div><a class="text-link reveal" href="#contact">Plan your visit ↗</a></div>
+  <div class="gallery-grid">
+    <figure class="reveal"><img loading="lazy" src="https://images.unsplash.com/photo-1600607687939-ce8a6c25118c?auto=format&fit=crop&w=1000&q=85" alt="Modern hotel architecture"><figcaption>Architecture</figcaption></figure>
+    <figure class="reveal"><img loading="lazy" src="https://images.unsplash.com/photo-1571896349842-33c89424de2d?auto=format&fit=crop&w=900&q=85" alt="Resort pool"><figcaption>Retreat</figcaption></figure>
+    <figure class="reveal"><img loading="lazy" src="https://images.unsplash.com/photo-1611892440504-42a792e24d32?auto=format&fit=crop&w=900&q=85" alt="Suite interior"><figcaption>Suites</figcaption></figure>
+    <figure class="reveal"><img loading="lazy" src="https://images.unsplash.com/photo-1517248135467-4c7edcad34c4?auto=format&fit=crop&w=1400&q=85" alt="Restaurant interior"><figcaption>Dining</figcaption></figure>
+  </div>
+</section>
+<section class="quote"><small class="reveal">The AUREL philosophy</small><blockquote class="reveal">“Luxury is not what you see. It is what you remember, and how it made you feel.”</blockquote><small class="reveal">Stay extraordinary</small></section>
+</main>
+<footer id="contact">
+  <div class="footer-top"><div><div class="footer-brand">AUREL<span>.</span></div><p>A considered world of quiet grandeur. An extraordinary place to pause, connect and discover.</p></div><div class="footer-links"><div><b>Explore</b><a href="#hotel">The Hotel</a><a href="#rooms">Suites</a><a href="#experiences">Experiences</a><a href="#dining">Dining</a></div><div><b>Connect</b><a href="mailto:reservations@aurel.example">Email us</a><a href="tel:+10000000000">+1 000 000 0000</a><a href="#booking">Reservations</a><a href="#gallery">Instagram ↗</a></div></div></div>
+  <div class="footer-bottom"><span>© 2025 AUREL HOTEL. CONCEPT WEBSITE.</span><span>CRAFTED FOR EXTRAORDINARY STAYS</span></div>
+</footer>
+<div class="modal" id="bookingModal" role="dialog" aria-modal="true" aria-labelledby="modalTitle"><div class="modal-box"><button class="modal-close" id="modalClose" aria-label="Close">×</button><div class="section-kicker">Your journey begins</div><h3 id="modalTitle">Check your stay.</h3><p id="modalSummary">Your selected dates and preferences.</p><form id="guestForm"><label for="guestName">Full name</label><input id="guestName" required placeholder="Your name"><label for="guestEmail">Email address</label><input id="guestEmail" type="email" required placeholder="you@example.com"><button class="btn" type="submit">Send reservation enquiry ↗</button></form><p class="notice">Demo enquiry only — no booking is made and no payment is taken. Connect a hotel booking backend to accept real reservations.</p></div></div>
+<script src="https://cdnjs.cloudflare.com/ajax/libs/three.js/r152/three.min.js"></script>
+<script src="https://cdnjs.cloudflare.com/ajax/libs/gsap/3.12.5/gsap.min.js"></script>
+<script src="https://cdnjs.cloudflare.com/ajax/libs/gsap/3.12.5/ScrollTrigger.min.js"></script>
+<script src="https://cdn.jsdelivr.net/npm/@studio-freight/lenis@1.0.42/bundled/lenis.min.js"></script>
+<script>
+(() => {
+ const $=s=>document.querySelector(s);
+ const loader=$('#loader');
+ window.addEventListener('load',()=>setTimeout(()=>{loader.classList.add('hide');document.body.classList.remove('loading');document.querySelectorAll('.hero .reveal').forEach((el,i)=>setTimeout(()=>el.classList.add('visible'),i*180));},650));
+ const header=$('#header');window.addEventListener('scroll',()=>header.classList.toggle('scrolled',scrollY>40),{passive:true});
+ $('#menuToggle').addEventListener('click',()=>$('#nav').classList.toggle('open'));
+ $('#nav').querySelectorAll('a').forEach(a=>a.addEventListener('click',()=>$('#nav').classList.remove('open')));
+ // Smooth scrolling, with native fallback.
+ let lenis=null;
+ if(window.Lenis){lenis=new Lenis({duration:1.15,smoothWheel:true});function raf(t){lenis.raf(t);requestAnimationFrame(raf)}requestAnimationFrame(raf);if(window.gsap&&window.ScrollTrigger){lenis.on('scroll',ScrollTrigger.update);gsap.ticker.add(t=>lenis.raf(t*1000));gsap.ticker.lagSmoothing(0)}}
+ // Reveal choreography: IntersectionObserver fallback plus ScrollTrigger when available.
+ if(window.gsap&&window.ScrollTrigger){
+   gsap.registerPlugin(ScrollTrigger);
+   gsap.utils.toArray('.reveal:not(.hero .reveal)').forEach((el)=>gsap.fromTo(el,{y:48,opacity:0},{y:0,opacity:1,duration:1.05,ease:'power3.out',scrollTrigger:{trigger:el,start:'top 88%',once:true}}));
+   gsap.utils.toArray('.image-reveal').forEach(el=>gsap.fromTo(el,{clipPath:'inset(12% 8% 12% 8%)'},{clipPath:'inset(0% 0% 0% 0%)',duration:1.3,ease:'power3.inOut',scrollTrigger:{trigger:el,start:'top 82%',once:true}}));
+   gsap.to('.hero-bg',{yPercent:17,ease:'none',scrollTrigger:{trigger:'.hero',start:'top top',end:'bottom top',scrub:true}});
+   gsap.to('#hero3d',{yPercent:22,scale:1.12,ease:'none',scrollTrigger:{trigger:'.hero',start:'top top',end:'bottom top',scrub:true}});
+   gsap.to('.room-image img',{yPercent:-7,ease:'none',scrollTrigger:{trigger:'.room-feature',start:'top bottom',end:'bottom top',scrub:true}});
+   gsap.to('.experience-image img',{yPercent:8,ease:'none',scrollTrigger:{trigger:'.experience-image',start:'top bottom',end:'bottom top',scrub:true}});
+ }else{
+   const io=new IntersectionObserver(entries=>entries.forEach(e=>{if(e.isIntersecting){e.target.classList.add('visible');io.unobserve(e.target)}}),{threshold:.12});
+   document.querySelectorAll('.reveal,.image-reveal').forEach(el=>io.observe(el));
+ }
+ // Date constraints and booking enquiry flow.
+ const today=new Date();const iso=d=>{const x=new Date(d.getTime()-d.getTimezoneOffset()*60000);return x.toISOString().slice(0,10)};
+ $('#checkin').min=iso(today);$('#checkin').value=iso(today);
+ const tomorrow=new Date(today);tomorrow.setDate(tomorrow.getDate()+1);$('#checkout').min=iso(tomorrow);$('#checkout').value=iso(tomorrow);
+ $('#checkin').addEventListener('change',()=>{const d=new Date($('#checkin').value+'T12:00:00');d.setDate(d.getDate()+1);$('#checkout').min=iso(d);if($('#checkout').value<$('#checkout').min)$('#checkout').value=$('#checkout').min});
+ const modal=$('#bookingModal');
+ $('#bookingForm').addEventListener('submit',e=>{e.preventDefault();if($('#checkout').value<=$('#checkin').value){alert('Check-out must be after check-in.');return}$('#modalSummary').textContent=`${$('#checkin').value} to ${$('#checkout').value} · ${$('#guests').value} · ${$('#roomtype').value}. Complete the enquiry below.`;modal.classList.add('open')});
+ $('#modalClose').addEventListener('click',()=>modal.classList.remove('open'));modal.addEventListener('click',e=>{if(e.target===modal)modal.classList.remove('open')});
+ $('#guestForm').addEventListener('submit',e=>{e.preventDefault();const name=$('#guestName').value.trim(),email=$('#guestEmail').value.trim();const subject=encodeURIComponent('AUREL stay enquiry');const body=encodeURIComponent(`Name: ${name}\nEmail: ${email}\nCheck-in: ${$('#checkin').value}\nCheck-out: ${$('#checkout').value}\nGuests: ${$('#guests').value}\nStay: ${$('#roomtype').value}\n\nPlease contact me about availability.`);window.location.href=`mailto:reservations@aurel.example?subject=${subject}&body=${body}`;});
+ // Procedural Three.js architectural sculpture in hero. Uses no external 3D model.
+ const canvas=$('#hero3d');
+ if(window.THREE&&canvas){
+  const renderer=new THREE.WebGLRenderer({canvas,alpha:true,antialias:true});renderer.setPixelRatio(Math.min(devicePixelRatio,1.7));renderer.setSize(innerWidth,innerHeight);renderer.outputColorSpace=THREE.SRGBColorSpace;
+  const scene=new THREE.Scene();const camera=new THREE.PerspectiveCamera(35,innerWidth/innerHeight,.1,100);camera.position.set(0,2.8,13);
+  scene.add(new THREE.AmbientLight(0xffffff,.85));const key=new THREE.DirectionalLight(0xd8c19a,2.1);key.position.set(-4,7,6);scene.add(key);const rim=new THREE.PointLight(0x8ba8b8,2.2,30);rim.position.set(5,2,3);scene.add(rim);
+  const hotel=new THREE.Group();scene.add(hotel);
+  const mat=new THREE.MeshStandardMaterial({color:0x333c40,metalness:.72,roughness:.28,transparent:true,opacity:.78});
+  const glass=new THREE.MeshStandardMaterial({color:0x87979a,metalness:.85,roughness:.16,transparent:true,opacity:.5});
+  const gold=new THREE.MeshStandardMaterial({color:0xc5a46d,metalness:.8,roughness:.22});
+  function block(w,h,d,x,y,z,m){const o=new THREE.Mesh(new THREE.BoxGeometry(w,h,d),m);o.position.set(x,y,z);hotel.add(o);return o}
+  block(5.7,.38,2.4,0,-1.15,0,gold);
+  block(4.7,2.7,1.9,0,.35,0,mat);
+  block(5.1,.12,2.1,0,1.75,0,gold);
+  block(3.9,1.5,1.7,-.1,2.55,-.1,glass);
+  block(4.4,.12,2,0,3.34,-.1,gold);
+  block(2.9,1.05,1.4,.2,4,-.2,mat);
+  // Repeated vertical facade fins.
+  for(let i=0;i<17;i++){let x=-2.15+i*.27;let fin=new THREE.Mesh(new THREE.BoxGeometry(.035,2.5,.035),gold);fin.position.set(x,.3,1.01);hotel.add(fin)}
+  for(let i=0;i<11;i++){let x=-1.55+i*.31;let fin=new THREE.Mesh(new THREE.BoxGeometry(.025,1.4,.025),gold);fin.position.set(x,2.55,.78);hotel.add(fin)}
+  // Floating reflecting pool plane and subtle rings.
+  const pool=new THREE.Mesh(new THREE.PlaneGeometry(9,4),new THREE.MeshStandardMaterial({color:0x26383b,metalness:.65,roughness:.18,transparent:true,opacity:.65}));pool.rotation.x=-Math.PI/2;pool.position.set(0,-1.36,1.1);hotel.add(pool);
+  const ringMat=new THREE.MeshBasicMaterial({color:0xc5a46d,transparent:true,opacity:.3});
+  for(let i=0;i<4;i++){let ring=new THREE.Mesh(new THREE.TorusGeometry(1.1+i*.42,.006,6,90),ringMat);ring.rotation.x=Math.PI/2;ring.position.set(-2.4,-1.32,.4);hotel.add(ring)}
+  const particles=new THREE.Group();scene.add(particles);for(let i=0;i<65;i++){let p=new THREE.Mesh(new THREE.SphereGeometry(.012+Math.random()*.018,6,6),new THREE.MeshBasicMaterial({color:0xc5a46d,transparent:true,opacity:.45}));p.position.set((Math.random()-.5)*13,Math.random()*7-1,(Math.random()-.5)*5);particles.add(p)}
+  hotel.position.set(2.8,-.5,-1.4);hotel.rotation.y=-.22;let mx=0,my=0;
+  addEventListener('pointermove',e=>{mx=(e.clientX/innerWidth-.5);my=(e.clientY/innerHeight-.5)},{passive:true});
+  function animate(){requestAnimationFrame(animate);hotel.rotation.y+=((-.22+mx*.09)-hotel.rotation.y)*.025;hotel.rotation.x+=((-my*.035)-hotel.rotation.x)*.025;hotel.position.y=-.5+Math.sin(Date.now()*.00045)*.045;particles.rotation.y+=.00025;renderer.render(scene,camera)}animate();
+  addEventListener('resize',()=>{camera.aspect=innerWidth/innerHeight;camera.updateProjectionMatrix();renderer.setSize(innerWidth,innerHeight);renderer.setPixelRatio(Math.min(devicePixelRatio,1.7))});
+ }
+})();
+</script>
+</body>
+</html>
